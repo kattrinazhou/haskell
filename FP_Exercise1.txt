@@ -1,0 +1,37 @@
+Functions:
+1. 
+max2 :: Int -> Int -> Int
+max2 x y = (if x > y then x else y)
+2. 
+max3 :: Int -> Int -> Int -> Int
+max3 x y z = (if (max2 x y) > z then (max2 x y) else z )
+3.
+f :: (Int -> String) -> (String -> Bool) -> (Int -> Bool)
+fun1 :: Int -> String
+fun2 :: String -> Bool
+fun1 x = "apple"
+fun2 y = False
+f fun1 fun2 = \x -> fun2 (fun1 x)
+4.
+g :: (Int -> Bool) -> (Bool -> String) -> Int -> String
+tobool :: Int -> Bool
+toString :: Bool -> String
+tobool x = if x < 5 then False else True
+toString x = if x == True then "5 more" else "5 less"
+g tobool toString x = toString (tobool x)
+5.
+twice :: (Int -> Int) -> Int -> Int
+func1 :: Int -> Int
+func1 x = x + 1
+twice func1 x = func1 (func1 x)
+6.
+ghci> let g = 6.67 * 10 ^(-11)
+ghci> funcf m1 m2 d = (g * m1 * m2)/d^2
+ghci> funcf 3 4 5
+*** Exception: Negative exponent
+
+List
+1.
+mod3 :: [Int]
+mod3 = [x | x <- [1..30], x `mod` 3 == 0]
+2.
